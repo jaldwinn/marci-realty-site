@@ -81,7 +81,7 @@ header.scrolled {
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  z-index: 1002; /* ensures it's clickable above panel */
+  z-index: 1002; 
   position: relative;
 }
 
@@ -104,7 +104,7 @@ header.scrolled {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  z-index: 1001; /* under the hamburger */
+  z-index: 1001; 
   transition: right 0.3s ease;
 }
 
@@ -618,7 +618,118 @@ header.scrolled {
   display: block;
 }
 
-/* Responsive */
+.message-btn {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background-color: white;
+color: rgb(19, 19, 19);
+padding: 14px 24px;
+border: 1px solid #ccc;
+border-radius: 30px;
+font-size: 1rem;
+font-weight: bold;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+z-index: 999;
+transition: all 0.3s ease;
+font-family: 'Lato', sans-serif;
+}
+
+.message-btn:hover {
+background-color: rgb(240, 240, 240);
+transform: translateY(-8px);
+}
+
+
+.contact-box {
+position: fixed;
+bottom: 80px;
+right: 20px;
+width: 320px;
+background: white;
+border-radius: 16px;
+padding: 20px;
+box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+display: none; /* hidden by default */
+flex-direction: column;
+gap: 14px;
+z-index: 1000;
+animation: fadeIn 0.3s ease;
+}
+
+.contact-box h3 {
+margin: 0;
+font-family: 'Playfair Display', serif;
+font-size: 1.3rem;
+font-weight: 600;
+color: rgb(19, 19, 19);
+}
+
+.contact-box input,
+.contact-box textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 8px;
+font-size: 1rem;
+font-family: 'Lato', sans-serif;
+background-color: #fafafa;
+transition: border 0.2s ease;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus {
+outline: none;
+border-color: rgb(19, 19, 19);
+}
+
+.contact-box textarea {
+resize: none;
+height: 90px;
+}
+
+.contact-box button {
+background: rgb(19, 19, 19);
+color: white;
+border: none;
+padding: 12px;
+border-radius: 8px;
+cursor: pointer;
+font-weight: bold;
+font-size: 1rem;
+font-family: 'Lato', sans-serif;
+transition: background 0.3s ease;
+}
+
+.contact-box button:hover {
+background: #333;
+}
+
+
+.close-btn {
+position: absolute;
+top: 10px;
+right: 15px;
+background: none;
+border: none;
+font-size: 1.2rem;
+color: #666;
+cursor: pointer;
+}
+
+.close-btn:hover {
+color: black;
+}
+
+
+@keyframes fadeIn {
+from {opacity: 0; transform: translateY(20px);}
+to {opacity: 1; transform: translateY(0);}
+}
+
+
+
 @media (max-width: 1024px) {
   .card {
     flex: 0 0 40%;
@@ -1042,7 +1153,7 @@ header.scrolled {
     font-size: 1rem;
   }
 
-  /* General padding/margin improvements */
+
   section {
     padding: 5vw 3vw;
   }

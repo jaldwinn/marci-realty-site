@@ -17,7 +17,7 @@
   <header>
   <div class="logo-container">
     <a href="home.html"><img src="/images/marcilogolight.png" alt="Logo" class="logo"></a>
-  </div>
+  </div>~
 
   <nav class="main-nav">
     <a href="#home">Home</a>
@@ -344,6 +344,18 @@
       <img class="social-media-logo" src="/images/yelplogo.jpg" alt="Yelp">
     </a>
   </div>
+
+  <button class="message-btn" onclick="toggleContact()">Message Us</button>
+
+  <div class="contact-box" id="contactBox">
+    <button class="close-btn" onclick="toggleContact()">×</button>
+    <h3>Send a Message</h3>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Your Message"></textarea>
+    <button>Send</button>
+  </div>
+  
 
   <div class="social-media-copyright">
     <p>Copyright © 2023 Marci METZGER Homes - All Rights Reserved</p>

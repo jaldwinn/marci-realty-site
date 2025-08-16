@@ -47,7 +47,7 @@ if (toggleBtn) {
     officeHours.classList.toggle("active");
   });
 
-  // Optional: close dropdown when clicking outside
+  
   document.addEventListener("click", (event) => {
     if (!officeHours.contains(event.target)) {
       officeHours.classList.remove("active");
@@ -70,3 +70,7 @@ if (targetElement) {
 }
 });
 });
+ function toggleContact() {
+  const box = document.getElementById("contactBox");
+  box.style.display = box.style.display === "flex" ? "none" : "flex";
+}
