@@ -108,6 +108,18 @@ header.scrolled {
   transition: right 0.3s ease;
 }
 
+.mobile-nav a {
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  color: white;
+  font-weight: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav a:hover{
+  transform: translateY(-5px);
+}
+
 .mobile-nav.active {
   right: 0;
 }
@@ -812,7 +824,7 @@ to {opacity: 1; transform: translateY(0);}
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  opacity: 0.9
+  opacity: 0.9;
 }
 
 .search-listings-title {
