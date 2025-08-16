@@ -559,7 +559,9 @@ header.scrolled {
 /* Tablet (2 columns) */
 @media (max-width: 992px) {
   .our-services-grid-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8rem;
+    margin-top: 5rem;
   }
 }
 
@@ -634,11 +636,13 @@ box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 z-index: 999;
 transition: all 0.3s ease;
 font-family: 'Lato', sans-serif;
+opacity: 0.5
 }
 
 .message-btn:hover {
 background-color: rgb(240, 240, 240);
 transform: translateY(-8px);
+opacity: 1;
 }
 
 
@@ -722,6 +726,9 @@ cursor: pointer;
 color: black;
 }
 
+.gallery-grid {
+  display: none;
+}
 
 @keyframes fadeIn {
 from {opacity: 0; transform: translateY(20px);}
@@ -730,7 +737,16 @@ to {opacity: 1; transform: translateY(0);}
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
+
+.our-services-grid-container{
+  margin: auto;
+  margin-top: 3rem;
+}
+
+}
+
+@media (max-width: 1023px) {
   .card {
     flex: 0 0 40%;
     max-width: 100%;
@@ -742,15 +758,44 @@ to {opacity: 1; transform: translateY(0);}
 }
 
 @media (max-width: 600px) {
-  .card {
-    flex: 0 0 90%;
+   .carousel-container {
+    display: none; /* hide the carousel */
   }
 
-  .card img {
-    height: 140px;
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
+    gap: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .gallery-grid .card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
   }
 }
 
+@media (max-width: 1023px) {
+   .carousel-container {
+    display: none; 
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .gallery-grid .card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+}
 
 @keyframes scroll {
   0%   { transform: translateX(0); }
@@ -1067,10 +1112,6 @@ to {opacity: 1; transform: translateY(0);}
   }
 }
 
-
-
-
-
 @media (max-width: 600px) {
   /* HEADER */
   header {
@@ -1082,7 +1123,13 @@ to {opacity: 1; transform: translateY(0);}
     display: none;
   }
   .hamburger {
-    display: block;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+  }
+
+  .mobile-nav{
+    width: auto;
   }
   .mobile-panel {
     display: flex;
@@ -1108,6 +1155,7 @@ to {opacity: 1; transform: translateY(0);}
     font-size: 1rem;
   }
 
+ 
   /* REALTOR */
   .realtor-container {
     flex-direction: column;
@@ -1124,9 +1172,10 @@ to {opacity: 1; transform: translateY(0);}
   .realtor-right-container h1 {
     font-size: 1.6rem;
   }
-  .realtor-button-container {
+  .realtor-buttons {
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem;
   }
 
   /* SPONSOR */
@@ -1146,6 +1195,12 @@ to {opacity: 1; transform: translateY(0);}
     padding: 0 5vw;
     gap: 5vh;
   }
+
+  .get-it-sold-title h1,
+  .our-services-title h1,
+  .gallery-title h1{
+    font-size: 1.5rem;
+  }
   .get-it-sold-description h1 {
     font-size: 1.5rem;
   }
@@ -1161,6 +1216,7 @@ to {opacity: 1; transform: translateY(0);}
    /* OUR SERVICES */
   .our-services-grid-container {
     grid-template-columns: 1fr;
+    margin-top: 3rem;
   }
 
   .our-services-logo {
@@ -1168,6 +1224,7 @@ to {opacity: 1; transform: translateY(0);}
     height: 150px;
     top: -75px;
   }
+
 
   .our-services-description {
     margin-top: 90px;
